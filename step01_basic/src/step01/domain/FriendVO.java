@@ -61,4 +61,19 @@ public class FriendVO {
 	//멤버 변수값 새로 대입하는 (초기화) 생성자 
 	//3개의 데이터를 받아서 멤버 변수에 대입
 	
+	public FriendVO() {} //기본 생성자 
+	//멤버 변수 값 새로 대입하는 (초기화)
+	//
+	
+	public FriendVO(String a, String b , int c ) { // 생성자
+		name = a;
+		cellphone = b; 
+		age = c;
+	}
+	
+	
 }
+
+
+
+
