@@ -38,18 +38,12 @@ public class Step02Type {
 		// getObject() 호출해보기 
 		
 		Step02Type s = new Step02Type(); // 객체 만드는거 호출하는부분 
-		//s가 가진 모든 메소드 호출할수 있다.
-		System.out.println(s); // 이 s 의 주소와 v 의 주소는 다르다.  s2는 0x라 가정 
+		System.out.println(s);
 		//이 객채 생성이 기본이다 이걸 해야 다른 것을 불러올수 있다.
 		// 이 s 라는 객체를 이용해서 v 라는 새로운 객체를 만든다.
 		//호출 하는 관점에서 s
 		Step02Type v = s.getObject(); // 객체를 메소드 안에 있는 생성자를 이용해 객체를 받아온다.
-		Step02Type z = s.getObject(); // 객체를 메소드 안에 있는 생성자를 이용해 객체를 받아온다.
-		System.out.println(z); // 여기서 v 는 s 라는 객체를 통해 메소드를 호출하기 위해 이용했을 뿐 다른 객체다.
-		System.out.println(v); // 여기서 v 는 s 라는 객체를 통해 메소드를 호출하기 위해 이용했을 뿐 다른 객체다.
-		//v 는 0x 주소값? 0x 가 아닐까요? 주소값은 다르다 !
-		//new 개수만큼 새로운 주소를 만든다고 생각하면 된다.
-		System.out.println(v.name);
+		System.out.println(v);
 
 
 		

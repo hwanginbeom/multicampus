@@ -44,5 +44,7 @@ public class tete{
 		t2.output1(100,200,300);
 		
 		
+		
+		
 	}
 }
