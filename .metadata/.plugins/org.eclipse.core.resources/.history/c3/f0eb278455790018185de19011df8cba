@@ -1,0 +1,31 @@
+package test5;
+
+import step01.test.Test2;
+
+public class tete{
+	
+	public String name = "È²ÀÎ¹ü";
+	public String city = "ÀÎÃµ";
+	public int age = 27;
+	
+	public tete(){}
+	
+	public tete(String n , String c , int a) {
+		name = "²¥²¥";
+		city = "³¢÷?";
+		age = 21;
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		tete t1 = new tete();
+		tete t2 = new tete( "a",  "b",25 );
+		System.out.println(t1.name);
+		System.out.println(t2.name);
+		
+		
+	}
+}

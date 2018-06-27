@@ -5,7 +5,7 @@
  * 3.로직
  *	 	1.친구들 정보를 프로그램화
  *			-이름 (문자열  String), 
- *			-거주자(문자열  String) , 
+ *			-거주지(문자열  String) , 
  *			-나이(정수 , int)
  *		2. 수정 , 저장 , 삭제
  * 4.고려 사항
@@ -54,19 +54,21 @@ package step01.domain;
 
 public class FriendVO {
 	
-	public String name = "황인범 ";
-	public String cellphone = "000-0000-0000";
-	public int age = 27; 
+    public String name = "황인범 ";//퍼블릭을 지정해줘야 다른 곳에서도 name을 쓸 수 있다. defualt 는 동일 패키지 /클래스 까지 
+                                 //그래서 다른 패키지와 클래스에 적용이안되
+	public String cellphone = "000-0000-0000"; //string 은 문자열 
+	public int age = 27;   //int 는 정수형 
 	
+	//두가지 생성자 
 	//멤버 변수값 새로 대입하는 (초기화) 생성자 
-	//3개의 데이터를 받아서 멤버 변수에 대입
+	//3개의 데이터를 받아서 멤버 변수에 대입 하는 생성자
 	
-	public FriendVO() {} //기본 생성자 
+	public FriendVO() {} //기본 생성자 이건 생성자가 없을시 자동으로 생성된다. 그래서 생성자는 무조건 하나가 들어간다.
 	//멤버 변수 값 새로 대입하는 (초기화)
 	//
 	
-	public FriendVO(String a, String b , int c ) { // 생성자
-		name = a;
+	public FriendVO(String a, String b , int c ) { // 생성자 ( 생성자 안에 타입과 변수명을 적어준다. 
+		name = a;                                  // 타입에 맞게 받아야 한다.
 		cellphone = b; 
 		age = c;
 	}
