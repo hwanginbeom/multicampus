@@ -14,7 +14,6 @@ public class Step03Type {
 	void m(FriendVO v) { // a.m(FriendVO 객체); 호출 할 떄는 값만 주면서 호출한다. 타입을 부를 필요가 없다.
 		System.out.println(v.name ); 
 		
-		
 	}
 
 	public static void main(String[] args) {
