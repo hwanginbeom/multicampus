@@ -1,0 +1,56 @@
+/*학습내용
+ * 1. static 키워드
+ * 2. 적용 문법
+ * 		1.멤버 변수 선언구
+ * 			-생성되는 모든 객체들이 공유하는 변수
+ * 			-static 변수가 메모리에 실제 사용가능하게 생성되는 시점은?
+ * 			-Run 하는 시점에서 static을 만날 때 생성한다.
+ * 			
+ * 			
+ * 		2.메소드 선언구
+ * 		3.static{}
+ * 			-web server가 시작 될 떄 모든 user가 공유하는 자원이 있다면 
+ * 			 단 한번 실행 보장을 할 수 있는 문법
+ * 			 이름이 없음 따라서 코드로 호출 불가
+ * 			-byte code 가 메모리에 로딩 될 떄 자동 실행
+ * 		
+ */
+
+package step01.syntax;
+
+public class Step06static {
+	
+	//step01 - static 변수
+	static int no1 = 100; //프로그램이 런 하고 static 을 만나는 시점 
+	static String msg1 = "문자열";
+	
+	//instance 변수
+	int no2 = 200;
+	String msg2 = "문자열 2 ";
+	
+	
+	
+	
+	public static void main (String[] args) {
+		System.out.println(no1);
+		System.out.println(msg1);
+//		System.out.println(no2);
+//		System.out.println(msg2);
+	}
+	
+	
+	
+//	static {
+//		System.out.println(2);
+//	}
+//	
+//	public static void main(String[] args) {
+//		System.out.println("main");
+//	}
+//	
+//	static {
+//		System.out.println(1);
+//	}
+//	
+
+}

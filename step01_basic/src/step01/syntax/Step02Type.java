@@ -20,7 +20,7 @@ public class Step02Type {
 	
 	public Step02Type() {}// 기본 생성자
 	
-	
+
 	//Step02 Type 객체 반환 메소드
 	Step02Type getObject() {
 		Step02Type s = new Step02Type(); // 객체 생성 문법  s가 가지는건 생성된 객체의 주소값
@@ -37,13 +37,19 @@ public class Step02Type {
 		//반드시 변수 , 메소드를 보유한 객체 생성이 우선 
 		// getObject() 호출해보기 
 		
-		Step02Type s = new Step02Type(); // 객체 만드는거 호출하는부분 
-		//s가 가진 모든 메소드 호출할수 있다.
+		Step02Type s = new Step02Type(); // 객체 만들기 위해 생성자를 호출하는 부분 
+		//s가 가진 모든 메소드 호출할수 있다. 이것 보단 Step02Type이 가지고 있는 메소드를 호출 가능케함
 		System.out.println(s); // 이 s 의 주소와 v 의 주소는 다르다.  s2는 0x라 가정 
-		//이 객채 생성이 기본이다 이걸 해야 다른 것을 불러올수 있다.
+		//이 객체 생성이 기본이다 이걸 해야 다른 것을 불러올수 있다. 객체가 있어야 메소드를 사용 할수 있다.
 		// 이 s 라는 객체를 이용해서 v 라는 새로운 객체를 만든다.
 		//호출 하는 관점에서 s
 		Step02Type v = s.getObject(); // 객체를 메소드 안에 있는 생성자를 이용해 객체를 받아온다.
+		//s안에 있는 Step02Type 에 메소드를 사용하는데 getObject의 메소드는 생성자를 호출하여 만드는
+		//메소드 이다. 그래서 v 라는 것에 대해 새로운 객체가 형성 된다. 
+		// 이 때 v 는 Step02Type의 타입의 v 라는 객체인데 
+		//
+		
+		
 		Step02Type z = s.getObject(); // 객체를 메소드 안에 있는 생성자를 이용해 객체를 받아온다.
 		System.out.println(z); // 여기서 v 는 s 라는 객체를 통해 메소드를 호출하기 위해 이용했을 뿐 다른 객체다.
 		System.out.println(v); // 여기서 v 는 s 라는 객체를 통해 메소드를 호출하기 위해 이용했을 뿐 다른 객체다.

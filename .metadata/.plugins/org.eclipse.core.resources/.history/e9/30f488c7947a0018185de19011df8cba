@@ -1,0 +1,27 @@
+/*학습내용
+ * 1. 변수 최기화
+ * 		1.멤버
+ * 		2.로컬
+ * 2.기본 타입 변수간의 형변환
+ * 		-타입이 다른 변수 들 간에도 "형변환" 문법으로 변환이 가능
+ * 		-boolean은 절대 다른 타입으로 변환 불가
+ * 		-실수는 무조건 내부적으로 정수보다 큰 메모리가 관리 
+ * 
+ */
+
+package step01.syntax;
+
+public class Step05Variable {
+	
+	int no;
+	String msg;
+	
+	public Step05Variable() {}
+
+	public static void main(String[] args) {
+		Step05Variable s = new Step05Variable();
+		System.out.println(s.no);
+		System.out.println(s.msg);
+	}
+
+}
