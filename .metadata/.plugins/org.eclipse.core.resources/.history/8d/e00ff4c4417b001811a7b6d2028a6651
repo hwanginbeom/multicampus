@@ -1,0 +1,65 @@
+package step01.syntax;
+
+public class Step08Loop {
+	//for - 1~5 출력 , 키보드의 tab 과 동일한 키보드 "\t"
+	/* 1~5 까지 가변적인 데이터 보유하게 되는 변수
+	 * 1~1 씩 증가하는 로직
+	 * 변수 값이 5와 비교해서 6이라면 종료 ... 즉 조건식
+	 * for( 초기식 ; 조건식 ; 증감식 ){
+	 * 		조건식이 true 인 경우 실행되는 블록
+	 * }
+	 */
+	public static void forTest() {
+		for( int i=1; i <= 5 ; i++ ) { //i=i+1; 동일한 문장
+			System.out.print( i+"\t" );
+		}
+	}
+	
+	public static void forTest2() {
+		for( int i=1; i <= 5 ; i++ ) { //i=i+1; 동일한 문장
+			System.out.print( '*'+"\t" );
+		}
+	}
+	
+	//반복하는 수 만큼 데이터 적재(누적 , 저장)해서 출력
+	public static void forTest3() {
+		char star = '*';
+		String star2 = "";
+		int a =5;
+		for( int i=1 ; i<=5 ; i++ ) { //i=i+1; 동일한 문장
+			for(int j=0 ; j<a ; j++) {
+				System.out.print(star);
+			}
+			a--;
+			
+			System.out.println();
+		}
+	}
+	
+	public static void forTest4() {
+		char star = '*';
+		String star2 = "";
+		for( intlii=1 ; i<=5 ; i++ ) { //i=i+1; 동일한 문장
+			for(int j=5 ; j>=i ; j--) {
+				System.out.print(star);
+			}
+			
+			System.out.println();
+		}
+	}
+	
+	//while 
+	
+	//do_while
+
+	public static void main(String[] args) {
+		forTest();
+		System.out.println("\n-----2. *찍기");
+		forTest2();
+		System.out.println("\n-----3. *찍기");
+		forTest3();
+		forTest4();
+
+	}
+
+}

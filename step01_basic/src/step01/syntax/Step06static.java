@@ -43,7 +43,8 @@ public class Step06static {
 	
 	
 	
-	
+	//>java Step06static  이게 실행 명령어 인데.      Step06static.main(); 
+	//클래스명으로 메소드를 호출한다 이게 문법적으로 가능한 이유는 static이기 때문이다.
 	public static void main (String[] args) {
 		System.out.println(no1);
 		System.out.println(msg1);

@@ -1,0 +1,40 @@
+/*학습내용
+ * 1.조건식  
+ * 2.문법
+ * 		1. 조건 상황이 하나 인 경우 
+ * 			if(조건식){}            1번
+ * 		2. 조건 상황이 다수인 경우
+ * 			if(조건식{			   0~*번
+ * 			}else if(조건식){
+ * 			}else{ 모든 조건식에 해당 되지 않을 경우}  1번
+ * 		3. 조건 상황들이 아닌 경우도 고려해야 하는 경우
+ * 			if(){}else{}
+ * 		
+ */
+
+package step01.syntax;
+
+public class Step09If {
+	
+	public static char getGrade(int value) {
+		char retVal ='A';
+		if(value >=90) {
+			retVal='A'
+			System.out.println(retVal);
+		}else if(value >=80) {
+			retVal='B';
+		}
+		else if(value >=70) {
+			retVal ='C';
+		}
+		else {
+			retVal = 'F';
+		}
+		return retVal;
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}
