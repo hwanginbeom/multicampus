@@ -52,9 +52,7 @@ public class test3 {
 	int m3(int no) {
 		no = no +1;
 		m2(no);  // 멤버변수값이 10으로 바뀌었지만 이부분에서 로컬변수의 값은 아직 9이기 떄문에
-		System.out.println(no);
 		m1(no);
-		System.out.println(no);
 		return no ; //9값을 준다 . 
 	}
 

@@ -27,7 +27,7 @@ public class Step11Array1 {
 	
 	//String 배열
 	public static String[] stringArray() {
-		String[] s = {"임성환" , "박창윤","김인직"};
+		String[] s = {"임성환" , "박창윤"};
 		
 		return s;
 		}
@@ -35,9 +35,7 @@ public class Step11Array1 {
 	
 	//PeopleDTO 배열 
 	public static peopleDTO[] peopleArray() {
-		peopleDTO[] all = { new peopleDTO("신동엽",30), //객체 생성을 하면서 만들어야 되기 떄문에 
-																				// peopleDTO s = new peopleDTO("신동엽",30)
-																					// 여기서 이부분을 생략  peopleDTO s =  생성자를 호출 할 떄 값을 넣어서 생성 가능한지 물어보기 
+		peopleDTO[] all = { new peopleDTO("신동엽",30),
 										new peopleDTO("이영자",31)};
 		return all;
 		}
@@ -58,7 +56,6 @@ public class Step11Array1 {
 		 * 
 		 */
 		String p1 = peopleArray()[1].getName();
-		System.out.println(all[1].getName()); // 이게 제일 깔끔한거 같다.
 		
 		
 		
@@ -68,13 +65,9 @@ public class Step11Array1 {
 		int i2 = intArray()[2];	
 		System.out.println(i2); // 이런식으로도 가능 
 		System.out.println(i[2]); //이런식으로도 가능
-		System.out.println(intArray()[2]); //이런식으로도 가능  다 같은 의미 
-		
-		String[] s = stringArray();
-		String s2 = stringArray()[2];
-		System.out.println(s[2]);
-		System.out.println(s2);
-		System.out.println(stringArray()[2]);
+		System.out.println(intArray()[2]); //이런식으로도 가능
+
+		System.out.println(stringArray()[1]);
 		
 	}
 

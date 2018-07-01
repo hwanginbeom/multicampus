@@ -58,7 +58,7 @@ public class Step11Array1 {
 		 * 
 		 */
 		String p1 = peopleArray()[1].getName();
-		System.out.println(all[1].getName()); // 이게 제일 깔끔한거 같다.
+		System.out.println(all[1].getName());
 		
 		
 		

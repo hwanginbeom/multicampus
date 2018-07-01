@@ -59,7 +59,6 @@ public class Step12Array2 {
 		int[] i = {1,4,5,6,8,9};
 		for(int index = 0 ; index<i.length ; index++) {  //length ´Â ¹è¿­À» ¸¸µé¸é ÀÚµ¿À¸·Î »ý±ä´Ù.
 			System.out.print(i[index]	+ 10 + "\t"); // int ÇüÀÌ¶ó ´õÇÏ±â°¡ °¡´É 	
-			System.out.println(i[5]);
 //			System.out.print("°¼°¼" +3);                  //°¡´É 11	°¼°¼314	°¼°¼315	°¼°¼316	°¼°¼318	°¼°¼319	°¼°¼3
 		}
 	}

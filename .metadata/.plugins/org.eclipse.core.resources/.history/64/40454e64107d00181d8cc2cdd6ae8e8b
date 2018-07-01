@@ -17,8 +17,8 @@ public class peopleDTO {
 	private String name;  //멤버변수
 	private int age;         //멤버 변수
 	
-	public peopleDTO() {} //기본 생성자 
-	public peopleDTO(String newName , int newAge) { //  생성자    /   로컬 변수
+	public peopleDTO() {}
+	public peopleDTO(String newName , int newAge) { //로컬 변수
 		name = newName; // 여기서 모든 걸 name 으로 바꾸면 null 이 뜬다. 이건 바로 21라인의 name
 		age =newAge;       // 으로 가기 때문이다.
 	} // 여기까지 로컬변수 사용
