@@ -1,6 +1,7 @@
 package customer.view;
 
 import customer.controller.CustomerController;
+import customer.domain.CustomerDTO;
 
 public class StartView {
 
@@ -9,10 +10,21 @@ public class StartView {
 		System.out.println("*** 모두 검색 ***");
 		CustomerController.all();
 		
-		//가입 - id가 중복 되면 가입 불가
+		//검색 - id 로 검색
 		System.out.println("*** id로 검색 ***");
 		CustomerController.getOne("tester");
 		CustomerController.getOne("a");
+
+		//가입
+		CustomerDTO newOne = new CustomerDTO("man","허윤길","77",26,"vip");
+		CustomerController.addOne(newOne);
+		CustomerDTO newOne2 = new CustomerDTO("man","허윤길","77",26,"vip");
+		CustomerController.addOne(newOne2);
+		CustomerController.all();
+
+
+
+		
 
 		
 		//모든 검색 
@@ -22,6 +34,14 @@ public class StartView {
 		//검색 
 		
 		//삭제 -  존재하는 데이터 삭제,  미 존재하는 데이터 삭제시도?
+		
+		System.out.println("*** 삭제 ***");
+		CustomerController.deleteOne("admin");
+		CustomerController.deleteOne("admin");
+		CustomerController.all();
+
+
+		
 		
 		//검색
 

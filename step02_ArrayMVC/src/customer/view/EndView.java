@@ -23,4 +23,12 @@ public class EndView {
 		System.out.println("요청하신 정보가 미 존재합니다.");
 	}
 
+
+
+	public static void printMsg(String  msg) {
+		System.out.println(msg);
+	}
+
+	
+
 }

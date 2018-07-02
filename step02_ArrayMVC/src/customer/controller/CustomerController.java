@@ -36,10 +36,35 @@ public class CustomerController { //요청받기
 		}
 	}
 	
+	//가입
+	public static void addOne(CustomerDTO newDTO) {
+		int result = CustomerModel.addOne(newDTO);
+		if(result !=5) {
+			EndView.printMsg("회원가입 완료");
+		}
+		else {
+			EndView.printMsg("죄송합니다. 고객님 영역 점유는 불가입니다.");
+		}
+		
+	}
+	
+	//삭제
+	
+	public static void deleteOne(String id) {
+		boolean result = CustomerModel.deleteOne(id);
+		if(result) {
+			EndView.printMsg(id+"회원님 삭제 성공");
+		}
+		else {
+			EndView.printMsg("삭제 실패");
+		}
+	}
+
+	
+	
 	//grade로 해당 등급 들만 검색
 	
 	
-	//가입
 	
 	//수정 - id를 기분으로 grade 수정
 	
