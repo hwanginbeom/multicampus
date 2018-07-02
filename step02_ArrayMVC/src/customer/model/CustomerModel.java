@@ -13,6 +13,7 @@ public class CustomerModel {
 	static CustomerDTO[] all = new CustomerDTO[5];
 	
 	//byte code가 메모리에 로딩 시 무조건 자동 실행 되는 블록
+	
 	//임시 test 데이터 초기화에 적합
 	static {		
 		all[0] = new CustomerDTO("tester" , "이상록 ", "11" , 26, "vip");

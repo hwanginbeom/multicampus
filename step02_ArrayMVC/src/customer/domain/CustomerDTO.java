@@ -72,7 +72,7 @@ public class CustomerDTO {
 		this.grade = grade;
 	}
 	
-	@Override
+	@Override //모든 요소를 출력하기위해 출력
 	public String toString() {
 		return "CustomerDTO [id=" + id + ", pw=" + pw + ", name=" + name + ", age=" + age + ", grade=" + grade + "]";
 	}
