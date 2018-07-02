@@ -15,7 +15,7 @@ public class CustomerModel {
 	//byte code가 메모리에 로딩 시 무조건 자동 실행 되는 블록
 	
 	//임시 test 데이터 초기화에 적합
-	static {		
+	static {	 // 배열을 하나하나의 객체를 만든다. / static을   이렇게 쓰는건지 / endview에 있는 부분이 CustomerController에  있어야 되는거 아닌지 
 		all[0] = new CustomerDTO("tester" , "이상록 ", "11" , 26, "vip");
 		all[1] = new CustomerDTO("admin" , "박창윤 ", "22" , 28, "vvip");
 		all[2] = new CustomerDTO("master" , "김경남 ", "33" , 28, "vvip");
@@ -25,6 +25,39 @@ public class CustomerModel {
 	//조건 없이 모든 검색 
 	public static CustomerDTO[] getall() { //메소드는 호출전에는 실행 안된다. !! static도 차이가있음
 		return all;
+	}
+	
+	/*id 값으로 해당 고객의 모든 정보 반환 
+	 * 1. parameter - Stirng id 
+	 * 2. 반환 타입 - CustomerDTO
+	 * 
+	 * 값 비교시 필요한 API - equals()
+	 *비교 - 조건식
+	 *배열에는 여러개의 DTO 객체들 - 반복
+	 *
+	 *데이터가 존재하면 해당 DTO 객체 반환 
+	 *해당 데이터가 미 존재시 null 값 반환 
+	 */
+	public static CustomerDTO getOne(String id ) { 
+		CustomerDTO dto = null ;  // return 반환하기 위해 처음 부분에 초기홯나다.
+		for(int i=0 ; i<all.length; i++) {
+			dto = all[i];
+			if(dto != null && dto.getId().equals(id)) { //tester
+				break; //반복문 종료하는 제어문자
+			}
+			else {
+				dto = null;
+			}
+		}
+		return dto;
+	}
+	
+	public static void main(String[] args) {
+//		System.out.println(getOne("tester"));
+//		System.out.println(getOne("testers"));
+		System.out.println(all[4]);
+		System.out.println(all.length);
+		
 	}
 	
 
