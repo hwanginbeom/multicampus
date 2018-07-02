@@ -28,6 +28,9 @@ public class EndView {
 	public static void printMsg(String  msg) {
 		System.out.println(msg);
 	}
+	
+
+	
 
 	
 

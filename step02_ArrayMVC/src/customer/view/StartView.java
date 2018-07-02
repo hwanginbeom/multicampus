@@ -29,7 +29,19 @@ public class StartView {
 		
 		//모든 검색 
 		
+		
 		//수정 - 존재하는 데이터 수정 가능 , 미 존재하는 데이터 수정 시 불가 
+		/*id로 등급을 수정 
+		 * 단 , 정상 수정 ?  비 정상 수정여부에 대한 상황은 반드시 확인 가능해야함 
+		 */
+		
+		System.out.println("*** id로 검색 ***");
+		CustomerController.update("admin", "vvip");
+		CustomerController.update("admin", "vip");
+		CustomerController.update("admin1", "vvip");
+		CustomerController.all();
+
+
 		
 		//검색 
 		

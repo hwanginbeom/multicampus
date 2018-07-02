@@ -99,6 +99,19 @@ public class CustomerModel {
 		System.out.println(all.length);
 		
 	}
+
+
+	public static boolean update(String id , String grade) {
+		CustomerDTO dto = null ;  // return 반환하기 위해 처음 부분에 초기홯나다.
+		for(int i=0 ; i<all.length; i++) {
+			dto = all[i];
+			if(dto != null && dto.getId().equals(id) && !(dto.getGrade().equals(grade))) { //tester
+				dto.setGrade(grade);
+				return true;
+			}
+		}
+		return false;
+	}
 	
 
 }

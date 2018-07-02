@@ -60,13 +60,27 @@ public class CustomerController { //요청받기
 		}
 	}
 
+		
+
+	public static void update(String id, String grade) {
+		boolean result = CustomerModel.update(id, grade);
+		if(result) {
+			EndView.printMsg(id+"회원님의 등급이 " + grade +"로 수정 성공 하였습니다");
+		}
+		else {
+			EndView.printMsg("수정 실패");
+		}
+	}
+		
 	
-	
+
 	//grade로 해당 등급 들만 검색
 	
 	
 	
 	//수정 - id를 기분으로 grade 수정
+	
+	
 	
 	//삭제 - id
 
