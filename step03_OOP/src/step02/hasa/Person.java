@@ -4,5 +4,21 @@ public class Person {
 	
 	Car myCar = new Car();
 	String name = "È²ÀÎ¹ü";
+	
+	
+	public Car getMyCar() {
+		return myCar;
+	}
+	public void setMyCar(Car myCar) {
+		this.myCar = myCar;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 
 }
