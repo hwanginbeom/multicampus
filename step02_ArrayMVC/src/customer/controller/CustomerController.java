@@ -1,4 +1,4 @@
-package customer.controller;
+package customer.controller; //DTO 와 model 와 EndView를 통해 만든 무언가를 startview에서 쓰기 위해 만들고 대기 하는 곳 
 
 import customer.domain.CustomerDTO;
 import customer.model.CustomerModel;
@@ -62,8 +62,8 @@ public class CustomerController { //요청받기
 
 		
 
-	public static void update(String id, String grade) {
-		boolean result = CustomerModel.update(id, grade);
+	public static void updateOne(String id, String grade) {
+		boolean result = CustomerModel.updateOne(id, grade);
 		if(result) {
 			EndView.printMsg(id+"회원님의 등급이 " + grade +"로 수정 성공 하였습니다");
 		}
@@ -84,4 +84,4 @@ public class CustomerController { //요청받기
 	
 	//삭제 - id
 
-}
+} // System.out.println()  이건 시스템 클래스에 있는 out 이라는 변수타입에 println이라는 메소드 

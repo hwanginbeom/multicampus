@@ -10,6 +10,7 @@ public class StartView {
 		System.out.println("*** 모두 검색 ***");
 		CustomerController.all();
 		
+		
 		//검색 - id 로 검색
 		System.out.println("*** id로 검색 ***");
 		CustomerController.getOne("tester");

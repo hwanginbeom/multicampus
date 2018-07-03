@@ -4,7 +4,7 @@
  *  3. 데이터를 배열 활용 : DTO 객체들 CRUD
  */
 
-package customer.model;
+package customer.model; // 데이터가 저장되어 있고 데이터를 가공한다.
 
 import customer.domain.CustomerDTO;
 
@@ -92,6 +92,18 @@ public class CustomerModel {
 		return dto;
 	}
 	
+	public static boolean updateOne(String id , String grade) {
+		CustomerDTO dto = null ;  // return 반환하기 위해 처음 부분에 초기홯나다.
+		for(int i=0 ; i<all.length; i++) {
+			dto = all[i];  // 객체의 내용 값을 비교 할 때는 반드시 ! equals 로 바꿔야한다.
+			if(dto != null && dto.getId().equals(id) && !(dto.getGrade().equals(grade))) { //tester
+				dto.setGrade(grade);
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public static void main(String[] args) {
 //		System.out.println(getOne("tester"));
 //		System.out.println(getOne("testers"));
@@ -101,17 +113,7 @@ public class CustomerModel {
 	}
 
 
-	public static boolean update(String id , String grade) {
-		CustomerDTO dto = null ;  // return 반환하기 위해 처음 부분에 초기홯나다.
-		for(int i=0 ; i<all.length; i++) {
-			dto = all[i];
-			if(dto != null && dto.getId().equals(id) && !(dto.getGrade().equals(grade))) { //tester
-				dto.setGrade(grade);
-				return true;
-			}
-		}
-		return false;
-	}
+
 	
 
 }
