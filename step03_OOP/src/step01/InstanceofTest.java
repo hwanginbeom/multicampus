@@ -35,9 +35,11 @@ public class InstanceofTest {
 
 		System.out.println("---- 재정의");
 		AA a = new AA(5);
-		AA a2 = new AA(10);
+		AA a2 = new AA(5);
+//		BB a3 = ne w BB(10); 다른 타입으로 instanceof는 불가
 		System.out.println(a.equals(a2));// 객체의 타입 같아도 다른 객체이기 떄문에
 											// 주소값 비교를 하고 false 가 나온다.
+//		System.out.println(a2.equals(a3));
 
 	}
 }
@@ -74,33 +76,33 @@ class AA extends Object {
 
 }
 
-class BB extends Object {
-	int data;
-
-	BB() {
-	}
-
-	BB(int d) {
-		data = d;
-	}
-
-	// 객체의 주소값 비교했던 메소드를 내용 값 비교로 재정의
-	/*
-	 * AA 객체들 비교 1. AA타입 여부 비교 2. AA타입이 일치된다면 AA객체들이 보유한 멤버 변수값 비교 Object 타입의 변수는
-	 * 상속시킨 메소드만 호출이 가능하고 자식만의 멤버를 호출하기 위해서는 형변환 필수
-	 */
-	public boolean equals(Object o) { // 오브젝트는 기본 8가지를 제외하고 모든것 상속가능
-		if (o instanceof AA) {
-			AA a = (AA) o; // data 멤버 변수 비교를 위한 형변환
-			// 이 메소드를 보유한 객체의 data 변수와
-			// parameter로 유입된 객체의 data 변수 비교
-			if (data == a.data) {
-				return true;
-			}
-		}
-		return false;
-
-	}
-
-}
-
+//class BB extends Object {
+//	int data;
+//
+//	BB() {
+//	}
+//
+//	BB(int d) {
+//		data = d;
+//	}
+//
+//	// 객체의 주소값 비교했던 메소드를 내용 값 비교로 재정의
+//	/*
+//	 * AA 객체들 비교 1. AA타입 여부 비교 2. AA타입이 일치된다면 AA객체들이 보유한 멤버 변수값 비교 Object 타입의 변수는
+//	 * 상속시킨 메소드만 호출이 가능하고 자식만의 멤버를 호출하기 위해서는 형변환 필수
+//	 */
+//	public boolean equals(Object o) { // 오브젝트는 기본 8가지를 제외하고 모든것 상속가능
+////		if (o instanceof AA) {
+//			AA a = (AA) o; // data 멤버 변수 비교를 위한 형변환
+//			// 이 메소드를 보유한 객체의 data 변수와
+//			// parameter로 유입된 객체의 data 변수 비교
+//			if (data == a.data) {
+//				return true;
+//			}
+//		
+//		return false;
+//
+//	}
+//
+//}
+//

@@ -20,11 +20,11 @@ public class Child2 extends Parent2 {
 	
 	public static void main(String[] args) {
 		Parent2 p = new Child2();
-		p.printAll();
+//		p.printAll();
 		Child2 c = (Child2)p;
 		c.no2 = 100;
 		System.out.println(p.no1);
-		p.no1 = 1000;
+		p.no1 = 1000;		
 		System.out.println(c.no1);
 
 	}

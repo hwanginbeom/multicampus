@@ -48,7 +48,8 @@ public class peopleDTO {
 	public boolean equals(Object o) {
 		if (o instanceof peopleDTO) {
 			peopleDTO a = (peopleDTO) o;
-			if (name == a.getName()) {
+			if (name.equals(a.getName())&&age == a.age) {
+				//name == a.getName() String 은 객체 값이기 떄문에 주소값을 비교해버린다 그래서 안된다. 
 				return true;
 			}
 		}

@@ -41,9 +41,10 @@ class C {
 }
 
 class D {
-	C c = new C();
 
 	D() {
 		System.out.println("D");
 	}
+	C c = new C();
+
 }
