@@ -29,7 +29,10 @@
 		 	1.클래스명과 100% 동일
 		 	2. 반환 타입 영역 자체가 미 존재
 		 	3. 하나의 클래스에 여러개 구현 ( 다중정의 = overloading , overload)
-		 		-rule : 반드시 parameter는 달라야 함
+		 		-overloading  rule : 반드시 parameter는 달라야 함 overloading
+		 			하나의 클래스에 여러가지의 생성자를 정의하는거 
+		 		-overriding 상속받았을 때 부모의 메소드를 재정의하는거 
+		 	
 		 	4. 개발자가 생성자 미 코딩시 자동으로 기본 생성자 반영
 		 	
 		  메소드
@@ -50,7 +53,7 @@
 			3. protected - 동일 package(동일한 폴더) 내에선 access(호출)
 			 					단, 다른 package 에서는 상속 관계의 클래스에서만 access 가능
 			4. default(생략된 형태)
-				-ehddlfgks package(동일한 폴더) 내에서만 access(호출) rksmd
+				-동일 package(동일한 폴더) 내에서만 access(호출) rksmd
 			5. private
 				-동일한 클래스내에서만가능
 				

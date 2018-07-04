@@ -40,21 +40,46 @@ public class peopleDTO {
 		this.age = age;
 	} // 여기 까지 사용
 
-	@Override
+	/*
+	 * Override -주석 보다 더 강한 명시적인 명령어 -해당 스펙에 맞게 구현을 안하면 문법 오류가 발생
+	 * 
+	 * @명령어 -@Override : 이 메소드는 반드시 재정의 하세요 라는 명령
+	 * 
+	 * @ : 엣
+	 */
+
+	// @Override
+	// public String toString() {
+	// return "peopleDTO [name=" + name + ", age=" + age + "]";
+	// }
+	//
+
+	// @Override //문법적 오류
+	// public String toString(int i) {
+	// return "peopleDTO [name=" + name + ", age=" + age + "]";
+	// }
+	//
+
+	@Override // 실행속도가 좀 더 빠르다
 	public String toString() {
-		return "peopleDTO [name=" + name + ", age=" + age + "]";
+		StringBuilder builder = new StringBuilder(); // 객체는 하나 !
+		builder.append("peopleDTO [name="); // 누적되고 지워진다. String은 계속 객체를 만들면서 저장을 해서 느리다.
+		builder.append(name);
+		builder.append(", age=");
+		builder.append(age);
+		builder.append("]");
+		return builder.toString();
 	}
 
 	public boolean equals(Object o) {
 		if (o instanceof peopleDTO) {
 			peopleDTO a = (peopleDTO) o;
-			if (name.equals(a.getName())&&age == a.age) {
-				//name == a.getName() String 은 객체 값이기 떄문에 주소값을 비교해버린다 그래서 안된다. 
+			if (name.equals(a.getName()) && age == a.age) {
+				// name == a.getName() String 은 객체 값이기 떄문에 주소값을 비교해버린다 그래서 안된다.
 				return true;
 			}
 		}
 		return false;
 
 	}
-
 }
