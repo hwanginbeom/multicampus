@@ -62,7 +62,7 @@ class AA extends Object {
 	 * 상속시킨 메소드만 호출이 가능하고 자식만의 멤버를 호출하기 위해서는 형변환 필수
 	 */
 	
-	System.out.println(a.equals(a2));// 객체의 타입 같아도 다른 객체이기 떄문에
+//	System.out.println(a.equals(a2));// 객체의 타입 같아도 다른 객체이기 떄문에
 
 	public boolean equals(Object o) { // 오브젝트는 기본 8가지를 제외하고 모든것 상속가능
 		if (o instanceof AA) {

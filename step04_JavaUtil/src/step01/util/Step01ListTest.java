@@ -57,10 +57,10 @@ public class Step01ListTest {
 		list.remove(1);
 		System.out.println(list.size()); //2
 		System.out.println(list.get(1));// ¼­¿µ»ó
-		
 		System.out.println(list);
 		
 
 	}
 
 }
+
