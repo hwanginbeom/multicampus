@@ -18,9 +18,9 @@ public class StartView {
 
 		//가입
 		CustomerDTO newOne = new CustomerDTO("man","허윤길","77",26,"vip");
-		CustomerController.addOne(newOne);
+//		CustomerController.addOne(newOne);
 		CustomerDTO newOne2 = new CustomerDTO("man","허윤길","77",26,"vip");
-		CustomerController.addOne(newOne2);
+//		CustomerController.addOne(newOne2);
 		CustomerController.all();
 
 
@@ -37,9 +37,9 @@ public class StartView {
 		 */
 		
 		System.out.println("*** id로 검색 ***");
-		CustomerController.updateOne("admin", "vvip");
-		CustomerController.updateOne("admin", "vip");
-		CustomerController.updateOne("admin1", "vvip");
+//		CustomerController.updateOne("admin", "vvip");
+//		CustomerController.updateOne("admin", "vip");
+//		CustomerController.updateOne("admin1", "vvip");
 		CustomerController.all();
 
 
@@ -49,8 +49,8 @@ public class StartView {
 		//삭제 -  존재하는 데이터 삭제,  미 존재하는 데이터 삭제시도?
 		
 		System.out.println("*** 삭제 ***");
-		CustomerController.deleteOne("admin");
-		CustomerController.deleteOne("admin");
+//		CustomerController.deleteOne("admin");
+//		CustomerController.deleteOne("admin");
 		CustomerController.all();
 
 

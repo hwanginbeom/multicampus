@@ -19,14 +19,15 @@ public class CustomerController {
 			EndView.printMsg();
 		}
 	}
-	
-	public static void addOne(CustomerDTO one) {
-		if()
-		EndView.printMsg("¾ÈµÊ ")
-	}
-	
-	public static void deleteOne
-	
-	public static void updateOne
-
 }
+	
+//	public static void addOne(CustomerDTO one) {
+//		if()
+//		EndView.printMsg("¾ÈµÊ ")
+//	}
+//	
+//	public static void deleteOne
+//	
+//	public static void updateOne
+//
+//}
