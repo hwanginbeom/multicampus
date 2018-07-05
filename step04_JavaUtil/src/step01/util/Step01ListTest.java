@@ -21,14 +21,33 @@ public class Step01ListTest {
 
 	public static void main(String[] args) {
 		//String들 만 저장 가능함 동적 메모리의 배열 형태 객체 생성
+		System.out.println("--- 제너릭 미 반영 ---");
+		ArrayList a = new ArrayList();
+		a.add(3);// newInteger(3) autoboxing
+		a.add("ans");
+		//? index 1번째의 문자열 객체만이 보유한 charAt(1)
+		String v= (String)a.get(1);
+		System.out.println(v.charAt(1));
+		System.out.println(((String)a.get(1)).charAt(1));
+		
+		
+		System.out.println("--- 제너릭 적용한 list ---");
+		//타입 제약 - 제너릭
 		ArrayList<String> list = new ArrayList<String>();
 		System.out.println(list.size());  // 0
+		
 		//데이터 저장
 		list.add("황인범");  //0번째 자동저장
+		System.out.println((list.get(0)).charAt(1));
+		
+		//제너릭 구조는 형변환 없이 index 값으로
+		//실제 생성된 타입의 객체로 반환
+		
+		
 		list.add("김한림");	//1번째 자동저장
 		list.add("서영상");
 		list.add("서영상");
-
+//		list.add((new Integer(3));             문법 오류 타입이 다르기 때문에
 		System.out.println(list.size()); // 3
 		
 		//index로 1에 저장된 데이터 반환 및 출력

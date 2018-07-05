@@ -30,8 +30,8 @@ public class Stpe02Wrapper {
 		String s = "3";
 		int a =3;
 		System.out.println(s.equals("3"));
-		System.out.println(s.equals(3));
-		System.out.println(s.equals( new Integer("3")));
+		System.out.println(s.equals(3)); //¿ÀÅä ¹Ú½Ì
+		System.out.println(s.equals( new Integer("3"))); //unboxing
 		System.out.println();
 		
 

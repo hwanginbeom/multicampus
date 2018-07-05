@@ -8,24 +8,24 @@ package probono.model.dto;
 
 public class ProbonoProject {
 
-	private String probonoProjectName; // 현 프로젝트 이름 //프로젝트명  
-	private Probono probono; // 기부종류                           // 재능기부내용
-	private Activist activist;  // 기부자                              // 재능 기부자 정보
-	private Recipient receive; // 수혜자                             //수혜자 정보
-	private String projectContent; //시부되는 실제내용         //프로젝트 제공 내용
+	private String probonoProjectName; // 현 프로젝트 이름
+	private Probono probono; // 기부종류
+	private Activist activist;  // 기부자
+	private Recipient receive; // 수혜자
+	private String projectContent; //시부되는 실제내용
 
-	public ProbonoProject() { //기본 생성자 
+	public ProbonoProject() {
 		super();
 	}
 
-	public ProbonoProject(String probonoProjectName, Probono probono,  //다양한 타입이 들어간 생성자
+	public ProbonoProject(String probonoProjectName, Probono probono,
 			Activist activist, Recipient receive, String projectContent) {
 		super();
 		this.probonoProjectName = probonoProjectName;
-		this.probono = probono;                                              // Probono 객체  /재능 기부 내용
-		this.activist = activist;                                                 // 아티스트 객체   / 아티스에 대한 내용
-		this.receive = receive;                                                 // receive 객체  / 수혜자에 대한 내용
-		this.projectContent = projectContent;                           // String 타입에 프로젝트 제공 내용 
+		this.probono = probono;
+		this.activist = activist;
+		this.receive = receive;
+		this.projectContent = projectContent;
 	}
 
 	public String getProbonoProjectName() {
