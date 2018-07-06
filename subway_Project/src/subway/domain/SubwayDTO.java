@@ -3,10 +3,9 @@ package subway.domain;
 
 public class SubwayDTO {
 	
-	private SubwayDTO subwayDTO ; 
 	private int month;
 	private int year;
-	private String linName;
+	private String lineName;
 	private String station;
 	private int feePassenger;
 	private int freePassenger;
@@ -16,7 +15,7 @@ public class SubwayDTO {
 		super();
 	}
 
-	public SubwayDTO(int month, int year, String linName, String station, int feePassenger, int freePassenger,
+	public SubwayDTO(int month, int year, String lineName, String station, int feePassenger, int freePassenger,
 			int totalPassenger) {
 		super();
 
@@ -27,7 +26,7 @@ public class SubwayDTO {
 			this.year = year;
 		}
 
-		this.linName = linName;
+		this.lineName = lineName;
 
 		this.station = station;
 
@@ -58,12 +57,12 @@ public class SubwayDTO {
 		this.year = year;
 	}
 
-	public String getLinName() {
-		return linName;
+	public String getlineName() {
+		return lineName;
 	}
 
-	public void setLinName(String linName) {
-		this.linName = linName;
+	public void setlineName(String lineName) {
+		this.lineName = lineName;
 	}
 
 	public String getStation() {
@@ -97,16 +96,6 @@ public class SubwayDTO {
 	public void setTotalPassenger(int totalPassenger) {
 		this.totalPassenger = totalPassenger;
 	}
-	
-	public SubwayDTO getSubwayDTO() {
-		return subwayDTO;
-	}
-
-	public void setSubwayDTO(SubwayDTO subwayDTO) {
-		this.subwayDTO = subwayDTO;
-	}
-	
-
 
 	@Override
 	public String toString() {
@@ -115,8 +104,8 @@ public class SubwayDTO {
 		builder.append(month);
 		builder.append(", year=");
 		builder.append(year);
-		builder.append(", linName=");
-		builder.append(linName);
+		builder.append(", lineName=");
+		builder.append(lineName);
 		builder.append(", station=");
 		builder.append(station);
 		builder.append(", feePassenger=");
@@ -128,6 +117,14 @@ public class SubwayDTO {
 		builder.append("]");
 		return builder.toString();
 	}
+	
+
+	
+	
+
+
+	
+	
 
 
 

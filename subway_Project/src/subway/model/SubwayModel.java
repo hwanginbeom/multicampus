@@ -5,10 +5,21 @@ import java.util.ArrayList;
 import subway.domain.SubwayDTO;
 
 public class SubwayModel {
+	
+
+	
+	
 
 	static SubwayModel instance = new SubwayModel();
 
 	static ArrayList<SubwayDTO> subwayList = new ArrayList<SubwayDTO>();
+	
+	static {	 // 배열을 하나하나의 객체를 만든다. / static을   이렇게 쓰는건지 / endview에 있는 부분이 CustomerController에  있어야 되는거 아닌지 
+		subwayList.add(new SubwayDTO (1 , 4, "12" ,"bas", 21, 31,191));
+		subwayList.add(new SubwayDTO (2 , 3, "13" ,"bcd", 22, 32,192));
+		subwayList.add(new SubwayDTO (3 , 2, "14" ,"제기동", 23, 33,193));
+		subwayList.add(new SubwayDTO (4 , 1, "15" ,"강남", 24, 34,194));
+	}
 	
 	public static SubwayModel getInstance() {
 		return instance;
@@ -41,62 +52,70 @@ public class SubwayModel {
 		subwayList.add(one);		
 		}
 
+	
 	// Subway 수정 - 역 / 연도 / 월이 같을 경우 수정
 	// lineName / year / month 가 맞아야 수정가능
 
-	public static boolean subwayUpdate(String station, int year, int month, SubwayDTO subway) {
+	public static int subwayUpdate(String station, int year, int month, SubwayDTO subway) {
 		for (int i = 0; i < subwayList.size(); i++) { // index 값으로 어느 부분에서 프로젝트 네임 인지확인하고
 			if (station.equals(subwayList.get(i).getStation())) {
 				if (year == subwayList.get(i).getYear()) {
 					if (month == subwayList.get(i).getMonth()) {
-						subwayList.get(i).setSubwayDTO(subway);
+						System.out.println("-----------------------------------------");
+						subwayList.get(i).setMonth(subway.getMonth());
+						subwayList.get(i).setYear(subway.getYear());
+						subwayList.get(i).setlineName(subway.getlineName());
+						subwayList.get(i).setStation(subway.getStation());
+						subwayList.get(i).setFeePassenger(subway.getFeePassenger());
+						subwayList.get(i).setFreePassenger(subway.getFreePassenger());
+						subwayList.get(i).setTotalPassenger(subway.getTotalPassenger());
+
+						
+						return 1;
 					} else {
 //						System.out.println("입력하신 " + month + "월은 존재하지 않습니다.");
-						return true;
+						return 2;
 					}
 				} else {
 //					System.out.println("입력하신" + year + " 년도는 존재하지 않습니다.");
-					return true;
+					return 3;
 
 				}
-			} else {
-//				System.out.println("입력하신" + station + " 역은 존재하지 않습니다.");
-				return true;
-
 			}
-
+		
 		}
-		return false;
+		return 4;
+//		System.out.println("입력하신" + station + " 역은 존재하지 않습니다.");
+
 	}
 
 	//삭제 부분 
-	public static boolean subwayDelete(String station, int year, int month) {
+	public static int subwayDelete(String station, int year, int month) {
 		int count = subwayList.size(); // projectList.size()이걸 변수로 저장해서 쓰면 projectList.size()를 쓸 때마다 계속 속도가 느려진다.
 		for (int i = 0; i <count; i++) { // index 값으로 어느 부분에서 프로젝트 네임 인지확인하고
 			if (station.equals(subwayList.get(i).getStation())) {
 				if (year == subwayList.get(i).getYear()) {
 					if (month == subwayList.get(i).getMonth()) {
 						subwayList.remove(i);
+						return 1;
 					} else {
 //						System.out.println("입력하신 " + month + "월은 존재하지 않습니다.");
-						return true;
+						return 2;
 					}
 				} else {
 //					System.out.println("입력하신" + year + " 년도는 존재하지 않습니다.");
-					return true;
+					return 3;
 
 				}
-			} else {
-//				System.out.println("입력하신" + station + " 역은 존재하지 않습니다.");
-				return true;
-
 			}
-
+		
 		}
-		return false;
+		return 4;
+//		System.out.println("입력하신" + station + " 역은 존재하지 않습니다.");
+
 	}
 	
-	// Project 개수
+	// subway 개수
 	public static int subwayListSize() {
 		return subwayList.size();
 	}
