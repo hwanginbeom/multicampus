@@ -5,20 +5,19 @@ public class PeopleDTO {
 	
 	private int year;
 	private int totalPeople;
-	private int totalRate;
+	private float totalRate;
 	private int young;
 	private int senior;
-	private int YoungRate;
-	private int SeniorRate;
+	private float YoungRate;
+	private float SeniorRate;
 	private int totalSenior;
 	
 	public PeopleDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public PeopleDTO(int year, int totalPeople, int totalRate, int young, int senior, int youngRate, int seniorRate,
-			int totalSenior) {
+	public PeopleDTO(int year, int totalPeople, float totalRate, int young, int senior, float youngRate,
+			float seniorRate, int totalSenior) {
 		super();
 		this.year = year;
 		this.totalPeople = totalPeople;
@@ -46,11 +45,11 @@ public class PeopleDTO {
 		this.totalPeople = totalPeople;
 	}
 
-	public int getTotalRate() {
+	public float getTotalRate() {
 		return totalRate;
 	}
 
-	public void setTotalRate(int totalRate) {
+	public void setTotalRate(float totalRate) {
 		this.totalRate = totalRate;
 	}
 
@@ -70,19 +69,19 @@ public class PeopleDTO {
 		this.senior = senior;
 	}
 
-	public int getYoungRate() {
+	public float getYoungRate() {
 		return YoungRate;
 	}
 
-	public void setYoungRate(int youngRate) {
+	public void setYoungRate(float youngRate) {
 		YoungRate = youngRate;
 	}
 
-	public int getSeniorRate() {
+	public float getSeniorRate() {
 		return SeniorRate;
 	}
 
-	public void setSeniorRate(int seniorRate) {
+	public void setSeniorRate(float seniorRate) {
 		SeniorRate = seniorRate;
 	}
 
@@ -99,23 +98,24 @@ public class PeopleDTO {
 		StringBuilder builder = new StringBuilder();
 		builder.append("PeopleDTO [year=");
 		builder.append(year);
-		builder.append(", totalPeople=");
+		builder.append("  l  totalPeople=");
 		builder.append(totalPeople);
-		builder.append(", totalRate=");
-		builder.append(totalRate);
-		builder.append(", young=");
+		builder.append("  l  totalRate=");
+		builder.append(totalRate/1000);
+		builder.append("  l  young=");
 		builder.append(young);
-		builder.append(", senior=");
+		builder.append("  l  senior=");
 		builder.append(senior);
-		builder.append(", YoungRate=");
-		builder.append(YoungRate);
-		builder.append(", SeniorRate=");
-		builder.append(SeniorRate);
-		builder.append(", totalSenior=");
+		builder.append("  l  YoungRate=");
+		builder.append(YoungRate /1000);
+		builder.append("  l  SeniorRate=");
+		builder.append(SeniorRate/1000);
+		builder.append("  l  totalSenior=");
 		builder.append(totalSenior);
 		builder.append("]");
 		return builder.toString();
 	}
 
+	
 
 }

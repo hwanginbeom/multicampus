@@ -1,8 +1,7 @@
 package people.controller;
 
-import java.util.ArrayList;
-
 import people.Model.PeopleModel;
+import people.domain.FareDTO;
 import people.domain.PeopleDTO;
 import people.view.RunningEndView;
 
@@ -15,6 +14,11 @@ public class PeopleController {
 
 		RunningEndView.peopleListView(PeopleModel.getAllpeople()); // DTO객체들을 가져와서
 	}
+	public static void allFare() {
+
+		RunningEndView.FareListView(PeopleModel.getAllFarepeople()); // DTO객체들을 가져와서
+	}
+	
 
 	// 하나 출력
 	public static void getpeople(int year) {
@@ -23,6 +27,17 @@ public class PeopleController {
 			RunningEndView.printOne(one);
 		} else {
 			RunningEndView.printMsg();
+		}
+	}
+	
+	//Fare 출력
+	
+	public static void getFare(int year) {
+		FareDTO one = PeopleModel.getFarePeople(year);
+		if (one != null) { // 검색 된 데이터가 존재 할 경우 true
+			RunningEndView.printOne2(one);
+		} else {
+			RunningEndView.printMsg("해당 데이터는 존재하지 않습니다.");
 		}
 	}
 
