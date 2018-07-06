@@ -1,0 +1,61 @@
+package people.controller;
+
+import java.util.ArrayList;
+
+import people.Model.PeopleModel;
+import people.domain.PeopleDTO;
+import people.view.RunningEndView;
+
+public class PeopleController {
+
+	static PeopleModel peopleData = PeopleModel.getInstance();
+
+	// 전체 출력
+	public static void all() {
+
+		RunningEndView.peopleListView(PeopleModel.getAllpeople()); // DTO객체들을 가져와서
+	}
+
+	// 하나 출력
+	public static void getpeople(int year) {
+		PeopleDTO one = PeopleModel.getpeople(year);
+		if (one != null) { // 검색 된 데이터가 존재 할 경우 true
+			RunningEndView.printOne(one);
+		} else {
+			RunningEndView.printMsg();
+		}
+	}
+
+	// 데이터 추가
+	public static void addpeople(PeopleDTO newDTO) {
+		PeopleModel.peopleAdd(newDTO);
+		RunningEndView.printMsg("역 관련 추가 데이터 삽입 완료");
+	}
+
+	// 삭제
+
+	public static void peopleDelete( int year) {
+		boolean result = PeopleModel.peopleDelete(year);
+		if (result) {
+			RunningEndView.printMsg("삭제 성공");
+		}
+		else {
+			RunningEndView.printMsg("삭제 실패");
+
+		}
+		
+	}
+
+	// 업데이트
+
+	public static void peopleUpdate( int year ,PeopleDTO people) {
+		boolean result = PeopleModel.peopleUpdate(year,people);
+		if (result) {
+			RunningEndView.printMsg("수정 성공");
+		}
+		else {
+			RunningEndView.printMsg("수정 실패");
+
+		}
+	}
+}

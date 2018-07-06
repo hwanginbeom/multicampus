@@ -8,7 +8,6 @@ public class StartView {
 	public static void main(String[] args) {
 		//모든 검색 - null인 경우 절대 출력 불가
 		System.out.println("*** 모두 검색 ***");
-		CustomerController.all();
 		
 		//검색 - id 로 검색
 		System.out.println("*** id로 검색 ***");

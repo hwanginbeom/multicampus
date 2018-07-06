@@ -21,11 +21,13 @@ import java.util.Iterator;
 import java.util.Set;
 
 import model.domain.peopleDTO;
+import probono.model.dto.Activist;
 
 
 public class Step03MapTest {
 	
 	public static void m1() { // HashMap < key , value>  그래서 key 부분이 같으면 하나만 출력한다.
+
 		HashMap<String, String> map = new HashMap<String,String>();
 		map.put("one","영상");
 		map.put("one","한림");
