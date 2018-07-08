@@ -52,7 +52,7 @@ public class SubwayController {
 	public static void subwayUpdate(String station, int year, int month, SubwayDTO subway) {
 		int result = SubwayModel.subwayUpdate(station, year, month, subway);
 		if (result == 1) {
-			RunningEndView.printMsg("수정 성공");
+			RunningEndView.printMsg("수정 성공"); 
 		} else if (result == 2) {
 			RunningEndView.printMsg("입력하신" + station + " 역은 존재하지 않습니다.");
 		} else if (result == 3) {

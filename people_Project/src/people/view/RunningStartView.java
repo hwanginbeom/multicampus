@@ -2,6 +2,7 @@ package people.view;
 
 import people.Model.PeopleModel;
 import people.controller.PeopleController;
+import people.domain.FareDTO;
 import people.domain.PeopleDTO;
 
 public class RunningStartView {
@@ -24,7 +25,8 @@ public class RunningStartView {
 
 		
 		//검색 - id 로 검색
-		System.out.println("*** id로 검색 ***");
+		
+		System.out.println("*** year로 검색 ***");
 //		PeopleController.getpeople(2020);
 		
 		PeopleController.getFare(2020);
@@ -35,6 +37,13 @@ public class RunningStartView {
 //		PeopleDTO newOne = new PeopleDTO(2100,2020200,303,3030303,4040,1010101,40404,10101010);
 //		PeopleController.addpeople(newOne);
 //		PeopleController.all();
+		System.out.println("*** 세금 관련 데이터 추가 ***");
+
+		
+		FareDTO newOne = new FareDTO(2045,1000435436,800002345,500234500,300004545);
+		PeopleController.addFare(newOne);
+		PeopleController.allFare();
+
 //
 ////
 ////		//수정 - 존재하는 데이터 수정 가능 , 미 존재하는 데이터 수정 시 불가 
@@ -47,6 +56,11 @@ public class RunningStartView {
 //
 //		PeopleController.peopleUpdate(2100, newOne3);
 //		PeopleController.all();
+		System.out.println("*** 수정 할 데이터를 year로 검색 ***");
+		FareDTO newOne2 = new FareDTO(2045,154115141,222222223,343434343,45454545);
+
+		
+		
 ////
 ////		
 ////		//삭제 -  존재하는 데이터 삭제,  미 존재하는 데이터 삭제시도?

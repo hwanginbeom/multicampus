@@ -102,6 +102,10 @@ public class PeopleModel {
 	public static void peopleAdd(PeopleDTO one) {
 		peopleList.add(one);
 	}
+	
+	public static void fareAdd(FareDTO one) {
+		peopleFare.add(one);
+	}
 
 	// people 수정 - 역 / 연도 / 월이 같을 경우 수정
 	// lineName / year / month 가 맞아야 수정가능

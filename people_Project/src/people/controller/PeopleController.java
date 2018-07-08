@@ -46,6 +46,11 @@ public class PeopleController {
 		PeopleModel.peopleAdd(newDTO);
 		RunningEndView.printMsg("역 관련 추가 데이터 삽입 완료");
 	}
+	
+	public static void addFare(FareDTO newDTO) {
+		PeopleModel.fareAdd(newDTO);
+		RunningEndView.printMsg("연도 관련 세금 데이터 삽입 완료");
+	}
 
 	// 삭제
 
