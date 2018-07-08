@@ -1,16 +1,41 @@
 package people.view;
 
+import java.util.Scanner;
+
 import people.Model.PeopleModel;
 import people.controller.PeopleController;
 import people.domain.FareDTO;
-import people.domain.PeopleDTO;
 
 public class RunningStartView {
 
 	public static void main(String[] args) {
-		System.out.println("*** 모두 검색 ***");
-		System.out.println("                   ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 		PeopleModel.fareDTOadd();
+
+		Scanner scan = new Scanner(System.in);
+		int result = 0;
+		int addyear = 2045;
+		
+		while( result != 6) {
+		System.out.println("메뉴를 선택 하세요");
+		System.out.println("  1 - 연도에 따른  모든 데이터 보기");
+		System.out.println("  2 - 해당 연도 검색하기 ");
+		System.out.println("  3 - 연도 데이터 추가하기");
+		System.out.println("  4 - 해당 연도 수정하기");
+		System.out.println("  5 - 해당 연도 삭제하기");
+		System.out.println("  6 - 프로그램을 종료 하기");
+		result = scan.nextInt();
+		switch (result) {
+
+		
+		
+		
+		
+		
+		
+		case 1: 
+		
+		System.out.println("*** 모두 출력 ***");
+		System.out.println("                   ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 		PeopleController.all();
 
 		System.out.println("                   ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
@@ -24,25 +49,58 @@ public class RunningStartView {
 		System.out.println("                           ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 
 		
+		break;
 		//검색 - id 로 검색
-		
-		System.out.println("*** year로 검색 ***");
+		case 2:
+		while(result!=0) {
+			System.out.println("*** 연도를 검색 하시겠습니까? 1(yes) /0(no) ");
+			result = scan.nextInt();
+			if(result ==0) {
+				break;
+			}
+		System.out.println("*** 연도를 입력하세요 : ");
+		result = scan.nextInt();
 //		PeopleController.getpeople(2020);
+		PeopleController.getFare(result);
 		
-		PeopleController.getFare(2020);
-		
-		
+		}
+
+		break;
+
+		case 3:
 
 //		//가입
 //		PeopleDTO newOne = new PeopleDTO(2100,2020200,303,3030303,4040,1010101,40404,10101010);
 //		PeopleController.addpeople(newOne);
 //		PeopleController.all();
-		System.out.println("*** 세금 관련 데이터 추가 ***");
+		while(result!=0) {
+		System.out.println("*** 데이터를 추가 하시겠습니까? 1(yes) /0(no) ");
+		result = scan.nextInt();
+		if(result ==0) {
+			break;
+		}
 
-		
-		FareDTO newOne = new FareDTO(2045,1000435436,800002345,500234500,300004545);
+		System.out.println("*** "+ addyear +"연도 세금 관련 데이터 추가 값을 넣으세요 ");
+		System.out.println("할인 운임 100프로 일 때 수익 :");
+		long result100 = scan.nextInt();
+
+		System.out.println("할인 운임 80프로 일 때 수익 :");
+		long result80 = scan.nextInt();
+
+		System.out.println("할인 운임 50프로 일 때 수익 :");
+		long result50 = scan.nextInt();
+
+		System.out.println("할인 운임 30프로 일 때 수익 :");
+		long result30 = scan.nextInt();
+
+		FareDTO newOne = new FareDTO(addyear,result100,result80,result50,result30);
+		addyear++;
 		PeopleController.addFare(newOne);
 		PeopleController.allFare();
+
+		}
+
+		break;
 
 //
 ////
@@ -56,12 +114,39 @@ public class RunningStartView {
 //
 //		PeopleController.peopleUpdate(2100, newOne3);
 //		PeopleController.all();
-		System.out.println("*** 수정 할 데이터를 year로 검색 ***");
-		FareDTO newOne2 = new FareDTO(2045,154115141,222222223,343434343,45454545);
-		PeopleController.fareUpdate(2045, newOne2);
-		PeopleController.allFare();
-
 		
+		case 4:
+			
+		while(result!=0) {
+			System.out.println("*** 데이터를 수정 하시겠습니까? 1(yes) /0(no) ");
+			result = scan.nextInt();
+			if(result ==0) {
+				break;
+			}
+				
+		System.out.println("*** 수정 할 연도를 입력하세요 :");
+		int resultyear = scan.nextInt();
+		
+		System.out.println("할인 운임 100프로 일 때 수익 :");
+		double result100 = scan.nextInt();
+
+		System.out.println("할인 운임 80프로 일 때 수익 :");
+		double result80 = scan.nextInt();
+
+		System.out.println("할인 운임 50프로 일 때 수익 :");
+		double result50 = scan.nextInt();
+
+		System.out.println("할인 운임 30프로 일 때 수익 :");
+		double result30 = scan.nextInt();
+		
+		FareDTO newOne2 = new FareDTO(resultyear,result100,result80,result50,result30);
+		PeopleController.fareUpdate(resultyear, newOne2);
+		PeopleController.getFare(resultyear);
+		
+			}
+
+		break;
+
 		
 ////
 ////		
@@ -71,12 +156,26 @@ public class RunningStartView {
 //		PeopleController.all();
 //
 
-		
-		System.out.println("*** 삭제 할 년도를 입력하세요 ***");
-		PeopleController.fareDelete(2045);
+		case 5:
+		while(result!=0) {
+			System.out.println("*** 데이터를 삭제 하시겠습니까? 1(yes) /0(no) ");
+			result = scan.nextInt();
+			if(result ==0) {
+				break;
+			}
+		System.out.println("*** 삭제 할 년도를 입력하세요 :");
+		int resultyear = scan.nextInt();
+		PeopleController.fareDelete(resultyear);
 		PeopleController.allFare();
+		}
+		break;
+
 		
+		case 6:
+			break;
+		}
 		
 	}
 
+}
 }
