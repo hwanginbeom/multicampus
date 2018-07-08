@@ -132,6 +132,31 @@ public class PeopleModel {
 		return false;
 
 	}
+	
+	//Fare 업데이트 
+	
+	public static boolean fareUpdate(int year, FareDTO people) {
+		for (int i = 0; i < peopleFare.size(); i++) { // index 값으로 어느 부분에서 프로젝트 네임 인지확인하고
+			if (year == (peopleFare.get(i).getYearFare())) {
+				System.out.println("-----------------------------------------");
+				peopleFare.get(i).setYearFare(year);
+				peopleFare.get(i).setFare100(people.getFare100());
+				peopleFare.get(i).setFare80(people.getFare80());
+				peopleFare.get(i).setFare50(people.getFare50());
+				peopleFare.get(i).setFare30(people.getFare30());
+
+				return true;
+
+			}
+			// System.out.println("입력하신" + station + " 역은 존재하지 않습니다.");
+
+		}
+		return false;
+
+	}
+	
+	
+	
 
 	// 삭제 부분
 	public static boolean peopleDelete(int year) {
@@ -139,6 +164,25 @@ public class PeopleModel {
 		for (int i = 0; i < count; i++) { // index 값으로 어느 부분에서 프로젝트 네임 인지확인하고
 			if (year == (peopleList.get(i).getYear())) {
 				peopleList.remove(i);
+
+				return true;
+
+			}
+			// System.out.println("입력하신" + station + " 역은 존재하지 않습니다.");
+
+		}
+		return false;
+
+	}
+	
+	
+	
+	// 삭제 부분
+	public static boolean fareDelete(int year) {
+		int count = peopleFare.size(); // projectList.size()이걸 변수로 저장해서 쓰면 projectList.size()를 쓸 때마다 계속 속도가 느려진다.
+		for (int i = 0; i < count; i++) { // index 값으로 어느 부분에서 프로젝트 네임 인지확인하고
+			if (year == (peopleFare.get(i).getYearFare())) {
+				peopleFare.remove(i);
 
 				return true;
 

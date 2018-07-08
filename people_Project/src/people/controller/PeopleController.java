@@ -65,11 +65,39 @@ public class PeopleController {
 		}
 		
 	}
+	
+	
+	// fare삭제
+
+	public static void fareDelete( int year) {
+		boolean result = PeopleModel.fareDelete(year);
+		if (result) {
+			RunningEndView.printMsg("삭제 성공");
+		}
+		else {
+			RunningEndView.printMsg("삭제 실패");
+
+		}
+		
+	}
 
 	// 업데이트
 
 	public static void peopleUpdate( int year ,PeopleDTO people) {
 		boolean result = PeopleModel.peopleUpdate(year,people);
+		if (result) {
+			RunningEndView.printMsg("수정 성공");
+		}
+		else {
+			RunningEndView.printMsg("수정 실패");
+
+		}
+	}
+	
+	// Fare업데이트
+
+	public static void fareUpdate( int year , FareDTO people) {
+		boolean result = PeopleModel.fareUpdate(year, people);
 		if (result) {
 			RunningEndView.printMsg("수정 성공");
 		}

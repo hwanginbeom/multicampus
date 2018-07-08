@@ -58,6 +58,8 @@ public class RunningStartView {
 //		PeopleController.all();
 		System.out.println("*** 수정 할 데이터를 year로 검색 ***");
 		FareDTO newOne2 = new FareDTO(2045,154115141,222222223,343434343,45454545);
+		PeopleController.fareUpdate(2045, newOne2);
+		PeopleController.allFare();
 
 		
 		
@@ -69,6 +71,10 @@ public class RunningStartView {
 //		PeopleController.all();
 //
 
+		
+		System.out.println("*** 삭제 할 년도를 입력하세요 ***");
+		PeopleController.fareDelete(2045);
+		PeopleController.allFare();
 		
 		
 	}
