@@ -114,26 +114,30 @@ public class ElectronicsServiceImpl{
 	//특정 제품 검색 
 	public Electronics getElectronics(String kind, String modelNum) throws InexistentException{
 		Electronics product = (Electronics)(electronicsList.get(kind).get(modelNum));  //종류와 넘버를 반환하고 그걸 Electronics product 에 넣는다 
-		if(product == null){
-			throw new InexistentException();
+																										//Electronics 타입의 객체 product에 Electronics으로 형변환한  
+																										//electronicsList에서 입력받은 kind 와 이 종류에서 get을 해 입력받은 modelNum를 
+																										// get에서 해준다 
+		if(product == null){                                                  //product 부분이 null 이면 오류 이기 때문에 throw 부분을 만들고 InexistentException 객체를 생성하고
+			throw new InexistentException();                 //throw로 윗부분 throws 던지고 이부분에서 다시 상위 메소드로 보낸다.
 		}
-		return product;
+		return product;                                               //그게아니면 return 값을 product을 만들어준다.
 	}
 	
 	
 	//제품 고유 번호로 제품 존재 유무 체크 메소드
 	/* true - 존재할 경우 반환값
 	 * false - 미존재할 경우 반환값	 */
-	public boolean existElectronics(String kind, String modelNum){
-		HashMap<String, Electronics> products = electronicsList.get(kind);
-		return products.containsKey(modelNum);
+	public boolean existElectronics(String kind, String modelNum){     //boolean 타입의 existElectronics 이라는 메소드는 String 값과 String값을 매개변수로 가진다.
+		HashMap<String, Electronics> products = electronicsList.get(kind);  //해쉬맵을 쓰는데 이 제너럴 타입은 String , Electronics 를 쓰는 객체 products는 
+																									//electronicsList리스트를 반환하는데 입력받은 kind를 반환하는 것을 products 부분에 넣는다.
+		return products.containsKey(modelNum);									//해쉬맵 타입의 products의 하위 메소드인  	containsKey 에 매개변수 	modelNum 를 넣는다.
 	}
 	
 	/* 저장
 	 * 새로운 전자 제품 저장 
 	 */
 	public void insertElectronics(String kind, Electronics product) throws DuplicateException{
-		if(!existElectronics(kind, product.getModelNum())){
+		if(!existElectronics(kind, product.getModelNum())){            // !existElectronics는 true의 반대이므로 반환값이 false일 경우 넣는다 
 			electronicsList.get(kind).put(product.getModelNum(), product);
 		}else{
 			throw new DuplicateException();
