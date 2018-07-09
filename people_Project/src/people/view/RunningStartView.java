@@ -23,6 +23,7 @@ public class RunningStartView {
 		System.out.println("  4 - 해당 연도 수정하기");
 		System.out.println("  5 - 해당 연도 삭제하기");
 		System.out.println("  6 - 프로그램을 종료 하기");
+		System.out.println();
 		System.out.print(" 메뉴를 선택하세요 :  ");
 
 
@@ -38,15 +39,22 @@ public class RunningStartView {
 		case 1: 
 		
 		System.out.println("*** 모든 데이터 출력 ***");
+		System.out.println();
+		System.out.println();
+
+		System.out.println("*** peopleList 데이터  ***");
 		System.out.println("                   ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+
 		PeopleController.all();
-
 		System.out.println("                   ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 
 		System.out.println();
 		System.out.println();
-		System.out.println();
-		System.out.println();
+
+
+		
+
+		System.out.println("*** peopleFare 데이터  ***");
 		System.out.println("                           ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 		PeopleController.allFare();
 		System.out.println("                           ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
@@ -61,7 +69,7 @@ public class RunningStartView {
 			if(result ==0) {
 				break;
 			}
-		System.out.print("*** 연도를 입력하세요 : ");
+		System.out.print("*** 연도를 입력하세요 :  ");
 		result = scan.nextInt();
 //		PeopleController.getpeople(2020);
 		PeopleController.getFare(result);
@@ -175,6 +183,7 @@ public class RunningStartView {
 
 		
 		case 6:
+			System.out.println();
 			System.out.println("*** 프로그램이 종료 되었습니다. ***");
 			break;
 		}

@@ -96,21 +96,21 @@ public class PeopleDTO {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("PeopleDTO [year=");
+		builder.append("PeopleDTO [연도=");
 		builder.append(year);
-		builder.append("  l  totalPeople=");
+		builder.append("  l  총 인구=");
 		builder.append(totalPeople);
-		builder.append("  l  totalRate=");
+		builder.append("  l  인구증가율=");
 		builder.append(totalRate/1000);
-		builder.append("  l  young=");
+		builder.append("  l  0세 - 64세=");
 		builder.append(young);
-		builder.append("  l  senior=");
+		builder.append("  l  65세 이상=");
 		builder.append(senior);
-		builder.append("  l  YoungRate=");
+		builder.append("  l  0세 - 64세 비율=");
 		builder.append(YoungRate /1000);
-		builder.append("  l  SeniorRate=");
+		builder.append("  l  65세 이상 비율=");
 		builder.append(SeniorRate/1000);
-		builder.append("  l  totalSenior=");
+		builder.append("  l  65세 이상 인구 수=");
 		builder.append(totalSenior);
 		builder.append("]");
 		return builder.toString();
