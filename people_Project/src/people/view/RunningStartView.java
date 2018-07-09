@@ -16,13 +16,16 @@ public class RunningStartView {
 		int addyear = 2045;
 		
 		while( result != 6) {
-		System.out.println("메뉴를 선택 하세요");
+		System.out.println("***********메뉴***********");
 		System.out.println("  1 - 연도에 따른  모든 데이터 보기");
 		System.out.println("  2 - 해당 연도 검색하기 ");
 		System.out.println("  3 - 연도 데이터 추가하기");
 		System.out.println("  4 - 해당 연도 수정하기");
 		System.out.println("  5 - 해당 연도 삭제하기");
 		System.out.println("  6 - 프로그램을 종료 하기");
+		System.out.print(" 메뉴를 선택하세요 :  ");
+
+
 		result = scan.nextInt();
 		switch (result) {
 
@@ -34,7 +37,7 @@ public class RunningStartView {
 		
 		case 1: 
 		
-		System.out.println("*** 모두 출력 ***");
+		System.out.println("*** 모든 데이터 출력 ***");
 		System.out.println("                   ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 		PeopleController.all();
 
@@ -58,7 +61,7 @@ public class RunningStartView {
 			if(result ==0) {
 				break;
 			}
-		System.out.println("*** 연도를 입력하세요 : ");
+		System.out.print("*** 연도를 입력하세요 : ");
 		result = scan.nextInt();
 //		PeopleController.getpeople(2020);
 		PeopleController.getFare(result);
@@ -80,17 +83,17 @@ public class RunningStartView {
 			break;
 		}
 
-		System.out.println("*** "+ addyear +"연도 세금 관련 데이터 추가 값을 넣으세요 ");
-		System.out.println("할인 운임 100프로 일 때 수익 :");
+		System.out.println("*** "+ addyear +"년도 세금 관련 데이터 추가 값을 넣으세요 ");
+		System.out.print("할인 운임 100프로 일 때 수익 : ");
 		long result100 = scan.nextInt();
 
-		System.out.println("할인 운임 80프로 일 때 수익 :");
+		System.out.print("할인 운임 80프로 일 때 수익 : ");
 		long result80 = scan.nextInt();
 
-		System.out.println("할인 운임 50프로 일 때 수익 :");
+		System.out.print("할인 운임 50프로 일 때 수익 : ");
 		long result50 = scan.nextInt();
 
-		System.out.println("할인 운임 30프로 일 때 수익 :");
+		System.out.print("할인 운임 30프로 일 때 수익 : ");
 		long result30 = scan.nextInt();
 
 		FareDTO newOne = new FareDTO(addyear,result100,result80,result50,result30);
@@ -124,19 +127,19 @@ public class RunningStartView {
 				break;
 			}
 				
-		System.out.println("*** 수정 할 연도를 입력하세요 :");
+		System.out.print("*** 수정 할 연도를 입력하세요 : ");
 		int resultyear = scan.nextInt();
 		
-		System.out.println("할인 운임 100프로 일 때 수익 :");
+		System.out.print("할인 운임 100프로 일 때 수익 : ");
 		double result100 = scan.nextInt();
 
-		System.out.println("할인 운임 80프로 일 때 수익 :");
+		System.out.print("할인 운임 80프로 일 때 수익 : ");
 		double result80 = scan.nextInt();
 
-		System.out.println("할인 운임 50프로 일 때 수익 :");
+		System.out.print("할인 운임 50프로 일 때 수익 : ");
 		double result50 = scan.nextInt();
 
-		System.out.println("할인 운임 30프로 일 때 수익 :");
+		System.out.print("할인 운임 30프로 일 때 수익 : ");
 		double result30 = scan.nextInt();
 		
 		FareDTO newOne2 = new FareDTO(resultyear,result100,result80,result50,result30);
@@ -163,7 +166,7 @@ public class RunningStartView {
 			if(result ==0) {
 				break;
 			}
-		System.out.println("*** 삭제 할 년도를 입력하세요 :");
+		System.out.print("*** 삭제 할 년도를 입력하세요 : ");
 		int resultyear = scan.nextInt();
 		PeopleController.fareDelete(resultyear);
 		PeopleController.allFare();
@@ -172,6 +175,7 @@ public class RunningStartView {
 
 		
 		case 6:
+			System.out.println("*** 프로그램이 종료 되었습니다. ***");
 			break;
 		}
 		

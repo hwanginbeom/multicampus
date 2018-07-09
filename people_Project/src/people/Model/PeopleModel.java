@@ -14,7 +14,7 @@ public class PeopleModel {
 
 	static float fare = 1250;
 
-	static PeopleModel instance = new PeopleModel();
+	private static PeopleModel instance = new PeopleModel();
 
 	static ArrayList<PeopleDTO> peopleList = new ArrayList<PeopleDTO>();
 	static ArrayList<FareDTO> peopleFare = new ArrayList<FareDTO>();
