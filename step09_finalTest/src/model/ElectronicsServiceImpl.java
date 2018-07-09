@@ -73,6 +73,8 @@ public class ElectronicsServiceImpl{
 				
 			electronicsList.put("noteBook", noteBookList); //electronicsList 라는 hashmap에 put 해주는데 여기서  electronicsList 는 String /  HashMap 타입을 넣어준다고 위에서 선언 해줌
 			
+			
+			productInfo.clear();
 			//smartPhone 데이터 로딩 
 			productInfo.load(new FileReader("smartPhoneInfo.properties"));   //Properties 타입의 productInfo에 load라는 메소드를 사용한다. 여기서는 "smartPhoneInfo.properties이걸 매개변수로 받는
 																									//FileReader 라는 생성자를 통해 객체를 만들고 이 객체를 load에 넣는다.
