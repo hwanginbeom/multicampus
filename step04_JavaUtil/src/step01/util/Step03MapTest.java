@@ -39,10 +39,10 @@ public class Step03MapTest {
 //		System.out.println(map.get("one")); //one 이라는 key를 찾아 값을 출력하는거
 //		System.out.println(map.remove("one"));  //지우기  
 //		System.out.println(map.get("one")); // map.toString
-		System.out.println(map.keySet());
+//		System.out.println(map.keySet());
 		Set keys = map.keySet();
-		System.out.println(keys);
-		System.out.println(map);
+//		System.out.println(keys);
+//		System.out.println(map);
 		
 		Iterator allKey = keys.iterator();  // 이 메소드를 사용해서 만들면 순서 상관없이 데이터 순서대로 넣는다. 
 		String k = null;
@@ -89,8 +89,8 @@ public class Step03MapTest {
 	}
 
 	public static void main(String[] args) {
-//		m1();
-		m2();
+		m1();
+//		m2();
 
 	}
 

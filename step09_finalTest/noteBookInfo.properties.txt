@@ -1,3 +1,5 @@
 #modelNum		modelName 		price 		 os
 NT900X4D-A68S=NT900X4D-A68S,삼성센스,1300,Windows 8
 NT900X4D-A99S=NT900X4D-A99S,삼성센스,1700,Windows 8
+
+key 부분이고  = value 부분이다 그리고 그걸 split 으로 , 로 나눠서 출력한다.

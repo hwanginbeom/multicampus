@@ -23,8 +23,7 @@ public class ElectronicsController {
 	
 	//품복 구분없이 모든 제품 검색 로직
 	public static void getAllElectronics(){
-		HashMap allProduct = electroService.getElectronicsList();
-		SuccessView.allProductPrint(allProduct);	
+		SuccessView.allProductPrint(electroService.getElectronicsList());	
 	}
 	
 	//품목별 모든 제품 검색
