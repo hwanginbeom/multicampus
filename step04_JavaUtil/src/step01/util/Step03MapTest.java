@@ -44,7 +44,7 @@ public class Step03MapTest {
 //		System.out.println(keys);
 //		System.out.println(map);
 		
-		Iterator allKey = keys.iterator();  // 이 메소드를 사용해서 만들면 순서 상관없이 데이터 순서대로 넣는다. 
+		Iterator allKey = keys.iterator();  // //하나씩 뽑을수 있는 상황으로 만들어 주는거  
 		String k = null;
 		while(allKey.hasNext()) {      //hasNext 데이터 존재 확인가능
 			k =(String)allKey.next();   //next 데이터 반환한다. 

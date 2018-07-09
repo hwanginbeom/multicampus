@@ -1,9 +1,12 @@
 package model;
 
 import java.io.FileReader;           //FileReader
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 
 import exception.DuplicateException;    //강사님이 말씀해주신 예외처리 1 
 import exception.InexistentException;   //강사님이 말씀해주신 예외처리 1 
@@ -46,62 +49,69 @@ public class ElectronicsServiceImpl{
 																									//load라는 메소드는  2바이트 단위로 알아서 구동을 한다. 그리고 매개변수 부분에 들어가는건
 																									//객체 부분이 들어가는데 이 부분은 FileReader 라는 생성자를 호출하고 그안에 받는 매개변수 
 																									// "noteBookInfo.properties"를 받는다 라는 뜻 
-			Iterator keyAll = productInfo.stringPropertyNames().iterator(); // iterator로 넣어준다.   iterator는 데이터 입력 순서와 상관없이 데이터 순서대로 넣는다.
+			Iterator <String> keyAll = productInfo.stringPropertyNames().iterator(); ////////수정한 부분
+																									// iterator로 넣어준다.   iterator는 데이터 입력 순서와 상관없이 데이터 순서대로 넣는다.
 																									//Iterator 타입의  keyAll 은  productInfo 타입의 객체 productInfo 를 사용하는데 이 안에는
 																									// 메소드가 있는데  .stringPropertyNames()이라는 메소드를 사용한다.
+																									// 이메소드는   public Set<String> stringPropertyNames() {
+																									// Map<String, String> h = new HashMap<>();
+																									//enumerateStringProperties(h);
+																									// return Collections.unmodifiableSet(h.keySet()); ek 
 			
-			String key = null;
+			String key = null;                                 
 			String [] productValue = null;
 			
-			while(keyAll.hasNext()){ // 가지고 있으면 줘라 
-				key = (String)keyAll.next();
+			while(keyAll.hasNext()){ //hasNext 데이터 존재 확인가능 // 데이터 존재가  확인 될 경우  while 반복문을 실행한다.  
+				key = keyAll.next();     // key에는 ketall에 있는 값을 반환한다.  // next는 반환 
 //				System.out.println("===" + key);
-				System.out.println("-----" + productInfo.getProperty(key));
+				System.out.println("-----" + productInfo.getProperty(key));      //Properties 타입의 productInfo에 있는  getProperty라는 메소드를 쓰는데 매개변수로 key를 받는다.
+																											// key 값을 토대로 value를 가져온다. 
+				productValue = productInfo.getProperty(key).split(",");       //productValue라는 String 배열 타입을 만들고 이안에  key 값을 토대로 value를 가져오는 메소드를 사용하고
+																									//.split(","); 을 써서 , 단위로 구분해준다. 
+				noteBookList.put(key, new NoteBook(productValue[0], productValue[1], new Integer(productValue[2]), productValue[3])); //hashmap 에 있는 put으로 넣어준다.
+			}														//String modelNum, String modelName,        int price,                       String os 만 노트북 멤버변수고 나머지는 상속받은 Electromics  부분
 				
-				productValue = productInfo.getProperty(key).split(",");
-				
-				noteBookList.put(key, new NoteBook(productValue[0], productValue[1], new Integer(productValue[2]), productValue[3]));
-			}			
-			electronicsList.put("noteBook", noteBookList);
+			electronicsList.put("noteBook", noteBookList); //electronicsList 라는 hashmap에 put 해주는데 여기서  electronicsList 는 String /  HashMap 타입을 넣어준다고 위에서 선언 해줌
 			
 			//smartPhone 데이터 로딩 
-			productInfo.load(new FileReader("smartPhoneInfo.properties"));
-			keyAll = productInfo.stringPropertyNames().iterator();			
+			productInfo.load(new FileReader("smartPhoneInfo.properties"));   //Properties 타입의 productInfo에 load라는 메소드를 사용한다. 여기서는 "smartPhoneInfo.properties이걸 매개변수로 받는
+																									//FileReader 라는 생성자를 통해 객체를 만들고 이 객체를 load에 넣는다.
+			keyAll = productInfo.stringPropertyNames().iterator();	  //하나씩 뽑을수 있는 상황으로 만들어 주는거 		
 			
-			while(keyAll.hasNext()){
-				key = (String)keyAll.next();
-				productValue = productInfo.getProperty(key).split(",");
+			while(keyAll.hasNext()){ //keyAll 에 있는값이 있을경우 while문을 돌린다 = > 값이 없을 떄 까지 돌린다.
+				key = keyAll.next();     ///////////String 형변환 뺴줌 위에서 제너릭 해줘서 
+				productValue = productInfo.getProperty(key).split(",");           //노트북에서 했던 부분 똑같이 한다.
 				smartPhoneList.put(key, new SmartPhone(productValue[0], productValue[1], 
 																			Integer.parseInt(productValue[2]),
 																			productValue[3]));
 			}
 			electronicsList.put("smartPhone", smartPhoneList);
-		} catch (Exception e) {
+		} catch (Exception e) {                   //catch 로  오류를 잡는다. 
 			e.printStackTrace();
 		}
 	}
 	
-	public static ElectronicsServiceImpl getInstance(){
+	public static ElectronicsServiceImpl getInstance(){      //객체를 반환해준다. 그래서 ElectronicsServiceImpl 타입을 쓸수 있게 해준다.
 		return instance;
 	}
 	
 	//모든 전자 제품 반환
-	public HashMap<String, HashMap> getElectronicsList() {
-		return electronicsList;
+	public HashMap<String, HashMap> getElectronicsList() {    //hashmap 타입인데 제너릭은 String 과 HashMap 이다. 
+		return electronicsList;                                                 //electronicsList 반환 
 	}
 	
 	//모든 노트북 or 스마트 폰 반환  
-	public HashMap<String, Electronics> getKindElectronics(String kind) throws InexistentException{
-		HashMap kindProduct = electronicsList.get(kind);
-		if(kindProduct == null){
-			throw new InexistentException("검색하고자 하는 품목들의 제품이 없습니다.");
+	public HashMap<String, Electronics> getKindElectronics(String kind) throws InexistentException{ //오류가 났을 경우 throws에서 상위메소드로 던진다  InexistentException 이부분으로
+		 // 해쉬맵에서 get은 이 값을 반환해라  
+		if(electronicsList.get(kind) == null){
+			throw new InexistentException("검색하고자 하는 품목들의 제품이 없습니다."); //InexistentException 타입에 객체생성  오류가 발생 했을경우에 객체를 생성하고  이걸 윗부분으로 던지고
 		}
-		return kindProduct;
+		return electronicsList.get(kind);  //return 값 kindProduct
 	}
 	
 	//특정 제품 검색 
 	public Electronics getElectronics(String kind, String modelNum) throws InexistentException{
-		Electronics product = (Electronics)(electronicsList.get(kind).get(modelNum));
+		Electronics product = (Electronics)(electronicsList.get(kind).get(modelNum));  //종류와 넘버를 반환하고 그걸 Electronics product 에 넣는다 
 		if(product == null){
 			throw new InexistentException();
 		}
@@ -132,9 +142,10 @@ public class ElectronicsServiceImpl{
 	 * kind, 모델로 모델 가격 수정하기 
 	 */
 	public void updateElectronics(String kind, String modelNum, int newPrice) throws InexistentException{
-		Electronics product = getElectronics(kind, modelNum);
-		if(product != null){
-			product.setPrice(newPrice);
+		if(getElectronics(kind, modelNum) != null){
+			getElectronics(kind, modelNum).setPrice(newPrice);
+		}else {
+			throw new InexistentException();
 		}
 	}
 	
@@ -143,6 +154,11 @@ public class ElectronicsServiceImpl{
 	 * kind, modelNum으로 제품 삭제 
 	 */
 	public void deleteElectronics(String kind, String modelNum) throws InexistentException{
+		if(getElectronics(kind, modelNum) != null){
 		getKindElectronics(kind).remove(modelNum);
+		}else {
+			throw new InexistentException();
+		}
+		
 	}
 }

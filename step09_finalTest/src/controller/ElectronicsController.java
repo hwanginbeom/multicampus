@@ -29,7 +29,7 @@ public class ElectronicsController {
 	//품목별 모든 제품 검색
 	public static void getKindElectronics(String kind){
 		try {
-			HashMap kindProduct = electroService.getKindElectronics(kind);
+			HashMap<String, Electronics> kindProduct = electroService.getKindElectronics(kind);
 			SuccessView.allProductPrint(kindProduct);
 		} catch (InexistentException e) {
 			FailView.errorMessage("요청하신 품목에 해당하는 제품들이 미 존재합니다.");
